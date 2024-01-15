@@ -4,16 +4,17 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import ApiTests from "./components/ApiTests"
+import Home from "./components/Home";
 import Shopping from "./components/Shopping";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "shopping",
-    element: <Shopping />,
+    children: [
+      {index: true, element: <Home />},
+      {path: "shop", element: <Shopping />}
+    ]
   },
   {
     path: "test",

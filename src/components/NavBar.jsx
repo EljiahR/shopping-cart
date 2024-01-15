@@ -14,12 +14,9 @@ const NavBar = ({ handleShowCart }) => {
             <Link to="shop" className={navbarDivs}>
                 <h2>Shop</h2>
             </Link>
-            <div onClick={handleShowCart} className={navbarDivs}>
+            <button onClick={handleShowCart} className={navbarDivs}>
                 <h2>Cart</h2>
-            </div>
-            
-            
-            
+            </button>
         </nav>
     )
 }

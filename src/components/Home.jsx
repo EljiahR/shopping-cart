@@ -3,7 +3,7 @@
 
 const Home = () => {
 
-    return <div>Home</div>
+    return <div className="mt-6">Home</div>
 }
 
 export default Home

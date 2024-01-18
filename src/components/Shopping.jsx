@@ -1,5 +1,7 @@
+import Loading from "./Loading"
+
 const Shopping = () => {
-    return <div className="mt-6">Shopping</div>
+    return <Loading />
 }
 
 export default Shopping

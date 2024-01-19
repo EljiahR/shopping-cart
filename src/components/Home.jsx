@@ -16,7 +16,7 @@ const Home = () => {
                     {isLoading &&
                     <Loading />
                     }
-                    <Items items={inventory} />
+                    <Items imageSize={28} thisClass="bg-white w-28 h-44 shrink-0 p-2 overflow-auto border-2 rounded-lg border-black" items={inventory} />
                 </div>
             </div>
         </div>

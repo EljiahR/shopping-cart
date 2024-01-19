@@ -9,15 +9,15 @@ function App() {
   const [inventory, setInventory] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
-  const getInventory = async () => {
-    const response = await fetch("https://fakestoreapi.com/products?limit=10")
+  const getInventory = async (limits="") => {
+    const response = await fetch("https://fakestoreapi.com/products?" + limits)
     const data = await response.json()
     setInventory(data)
     setIsLoading(false)
   }
 
   useEffect(()=>{
-    getInventory()
+    getInventory("limit=5")
   },[])
   
   const handleShowCart = () => {
@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <NavBar handleShowCart={handleShowCart} />
-      <Outlet context={{ inventory, isLoading }} />
+      <Outlet context={{ inventory, isLoading, getInventory }} />
       {showCart && <ShoppingCart />}
     </>
     

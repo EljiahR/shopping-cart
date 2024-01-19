@@ -1,15 +1,19 @@
 /* eslint-disable react/prop-types */
-const Items = ({ items }) => {
-   
+
+const Items = ({ itemExpand, items, thisClass, imageSize }) => {
+
+
     return (
         <>
         {items.map((item)=>{
             return (
-                <div className="bg-white w-28 h-44 shrink-0 p-2 overflow-auto border-2 rounded-lg border-black" key={item.id}>
-                    <img className="w-28 h-28" src={item.image} />
+                
+                <div onMouseLeave={() => itemExpand(false)} onMouseMove={(e)=>itemExpand(e, true, item)} className={thisClass} key={item.id}>
+                    <img className={`w-${imageSize} h-${imageSize}`} src={item.image} />
                     <p>${/\./.test(item.price) ? item.price : item.price + ".00"}</p>
                     <p>{item.title}</p>
                 </div>
+                
             )
         })}
         </>

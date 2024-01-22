@@ -14,7 +14,7 @@ const Shopping = () => {
         if(expand){
             itemDiv.classList.remove("hidden")
             itemDiv.style.left = `${e.pageX + 10}px`
-            itemDiv.style.top = `${e.pageY}px`
+            itemDiv.style.top = `${e.pageY - 300}px`
             itemImage.src = item.image
         } else {
             itemDiv.classList.add("hidden")
@@ -28,11 +28,11 @@ const Shopping = () => {
     return (
         <>
         <div id="shop-div" className="m-20">
-            <div className="bg-gray-50 grid grid-cols-5 grid-rows-4 gap-10 p-5" id="trending">
+            <div className="bg-gray-50 grid grid-cols-5 grid-rows-4 gap-10 p-5 rounded-lg" id="trending">
                 {isLoading &&
                 <Loading />
                 }
-                <Items itemExpand={itemExpand} imageSize={1} thisClass="h-36 overflow-hidden" items={inventory} />
+                <Items itemExpand={itemExpand} imageSize={2} thisClass="overflow-hidden" items={inventory} />
             </div>
         </div>
         <ExpandedItem />

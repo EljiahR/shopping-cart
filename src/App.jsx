@@ -28,7 +28,7 @@ function App() {
     <>
       <NavBar handleShowCart={handleShowCart} />
       <Outlet context={{ inventory, isLoading, getInventory }} />
-      {showCart && <ShoppingCart />}
+      {true && <ShoppingCart showCart={showCart} />}
     </>
     
   )

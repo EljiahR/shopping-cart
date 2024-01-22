@@ -2,7 +2,7 @@
 const ExpandedItem = () => {
 
     return (
-        <div id="expanded-item" className="absolute hidden h-28 w-28">
+        <div id="expanded-item" className="absolute hidden w-60">
             <img id="expanded-item-image" />
         </div>
     )

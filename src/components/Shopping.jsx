@@ -5,7 +5,7 @@ import Items from "./Items"
 import Loading from "./Loading"
 
 const Shopping = () => {
-    const { inventory, isLoading, getInventory } = useOutletContext()
+    const { inventory, isLoading, getInventory, handleItemClick } = useOutletContext()
     
     //this is NOT done
     const itemExpand = (e, expand, item = null) => {
@@ -32,7 +32,7 @@ const Shopping = () => {
                 {isLoading &&
                 <Loading />
                 }
-                <Items itemExpand={itemExpand} imageSize={2} thisClass="overflow-hidden" items={inventory} />
+                <Items handleItemClick={handleItemClick} itemExpand={itemExpand} imageSize={2} thisClass="overflow-hidden bg-white h-72" items={inventory} />
             </div>
         </div>
         <ExpandedItem />

@@ -3,7 +3,7 @@ import Items from "./Items"
 import Loading from "./Loading"
 
 const Home = () => {
-    const { inventory, isLoading } = useOutletContext()
+    const { inventory, isLoading, handleItemClick } = useOutletContext()
     
     return (
         <div id="home" className="grid grid-rows-2 grid-cols-1 h-full w-full items-center justify-items-center">
@@ -16,7 +16,7 @@ const Home = () => {
                     {isLoading &&
                     <Loading />
                     }
-                    <Items imageSize={28} thisClass="bg-white w-28 h-44 shrink-0 p-2 overflow-auto border-2 rounded-lg border-black" items={inventory} />
+                    <Items handleItemClick={handleItemClick} imageSize={28} thisClass="bg-white w-28 h-44 shrink-0 p-2 overflow-auto border-2 rounded-lg border-black" items={inventory} />
                 </div>
             </div>
         </div>

@@ -12,7 +12,19 @@ function App() {
 
   const handleItemClick = (item) => {
     let newCart = [...cart]
-    newCart.push(item)
+    let itemCopy = newCart.find(cartItem=> item.title == cartItem.title)
+    if(itemCopy){
+      itemCopy.quantity = itemCopy.quantity + 1
+    } else {
+      itemCopy = {
+        title: item.title,
+        image: item.image,
+        price: item.price,
+        quantity: 1
+      }
+      newCart.push(itemCopy)
+    }
+    
     setCart(newCart)
   }
 

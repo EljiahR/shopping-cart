@@ -32,7 +32,7 @@ const Shopping = () => {
                 {isLoading &&
                 <Loading />
                 }
-                <Items handleItemClick={handleItemClick} itemExpand={itemExpand} imageSize={2} thisClass="overflow-hidden bg-white h-72" items={inventory} />
+                <Items handleItemClick={handleItemClick} itemExpand={itemExpand} imageSize={28} thisClass="overflow-hidden bg-white h-72" items={inventory} />
             </div>
         </div>
         <ExpandedItem />

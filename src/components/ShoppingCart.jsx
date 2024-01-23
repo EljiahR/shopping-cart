@@ -14,11 +14,16 @@ const ShoppingCart = ({ showCart, cart }) => {
     },[showCart])
 
     return (
-        <div id="shopping-cart" className="bg-white fixed mt-8 w-60 -right-60 top-8 h-screen ease-out duration-500">
+        <div id="shopping-cart" className="bg-white fixed w-60 -right-60 top-0 pt-16 h-screen ease-out duration-500">
+            <h2 className="">Your Cart</h2>
+            <div></div>
             {cart.map((item)=>{
                 return (
-                    <div key={item.name}>
-                        {item.title}
+                    <div className="flex" key={item.title}>
+                        <img className="w-10 h-10" src={item.image} />
+                        <p>{item.title.slice(0,12)}</p>
+                        <p>x{item.quantity}</p>
+                        <p>${item.price}</p>
                     </div>
                 )
             })}

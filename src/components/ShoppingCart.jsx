@@ -16,7 +16,7 @@ const ShoppingCart = ({ showCart, cart }) => {
     return (
         <div id="shopping-cart" className="bg-white fixed w-60 -right-60 top-0 pt-16 h-screen ease-out duration-500">
             <h2 className="">Your Cart</h2>
-            <div></div>
+            
             {cart.map((item)=>{
                 return (
                     <div className="flex" key={item.title}>
@@ -27,6 +27,7 @@ const ShoppingCart = ({ showCart, cart }) => {
                     </div>
                 )
             })}
+            <div>Total: ${cart.reduce((total, item)=> total + item.price, 0)}</div>
         </div>
     )
 }
